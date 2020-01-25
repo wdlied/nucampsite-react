@@ -7,9 +7,12 @@ import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
 import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import styled, { keyframes} from 'styled-components';
+import { bounce } from 'react-animations';
 
 const maxLength = len => val => !val || (val.length <= len);
 const minLength = len => val => val && (val.length >= len);
+const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`} infinite`;
 
 function RenderCampsite({campsite}) {
     return (
@@ -34,7 +37,7 @@ function RenderComments({comments, postComment, campsiteId}) {
     if (comments) {
         return(
             <div className="col-md-5 m-1">
-                <h4>Comments</h4>
+                <Bounce><h4>Comments</h4></Bounce>
                 <Stagger in>
                 {comments.map( (comment) => {
                     return (

@@ -70,3 +70,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### json-server
 json-server --watch db.json -p 3001 -d 2000
 
+### packages necessary to install
+Added these packages for the Code Challenge and added the bounce effect.
+npm install styled-components
+npm install react-animations
